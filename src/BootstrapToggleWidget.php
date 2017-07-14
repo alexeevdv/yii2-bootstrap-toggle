@@ -67,7 +67,7 @@ class BootstrapToggleWidget extends InputWidget
         ], $this->pluginOptions);
 
         $this->view->registerJs('
-            $("#' . $this->getId() . '").bootstrapToggle({' . Json::encode($pluginOptions). '});
+            $("#' . $this->getId() . '").bootstrapToggle({' . Json::encode($pluginOptions) . '});
         ');
 
         if ($this->container) {
