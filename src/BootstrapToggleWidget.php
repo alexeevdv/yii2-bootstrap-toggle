@@ -64,10 +64,11 @@ class BootstrapToggleWidget extends InputWidget
             'on' => $this->labelEnabled,
             'off' => $this->labelDisabled,
             'onstyle' => 'success',
+            'offstyle' => 'danger',
         ], $this->pluginOptions);
 
         $this->view->registerJs('
-            $("#' . $this->getId() . '").bootstrapToggle({' . Json::encode($pluginOptions) . '});
+            $("#' . $this->getId() . '").bootstrapToggle(' . Json::encode($pluginOptions) . ');
         ');
 
         if ($this->container) {

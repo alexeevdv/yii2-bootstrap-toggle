@@ -10,14 +10,14 @@ use yii\web\AssetBundle;
  */
 class BootstrapToggleAsset extends AssetBundle
 {
-    public $basePath = '@bower/bootstrap-toggle';
+    public $sourcePath = '@bower/bootstrap-toggle';
 
     public $css = [
-        'bootstrap-toggle.css',
+        'css/bootstrap-toggle.css',
     ];
 
     public $js = [
-        'bootstrap-toggle.js',
+        'js/bootstrap-toggle.js',
     ];
 
     public $depends = [
