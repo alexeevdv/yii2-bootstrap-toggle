@@ -5,6 +5,8 @@ yii2-bootstrap-toggle
 
 Yii2 extension to render bootstrap toggle widget instead of checkbox.
 
+![Screenshot](screenshot.jpg)
+
 [http://www.bootstraptoggle.com/](http://www.bootstraptoggle.com/)
 
 
