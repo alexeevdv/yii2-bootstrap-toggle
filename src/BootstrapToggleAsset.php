@@ -3,24 +3,37 @@
 namespace alexeevdv\bootstrap;
 
 use yii\web\AssetBundle;
+use yii\web\JqueryAsset;
 
 /**
  * Class BootstrapToggleWidgetAsset
- * @package backend\assets
+ * @package alexeevdv\bootstrap
  */
 class BootstrapToggleAsset extends AssetBundle
 {
+    /**
+     * @inheritdoc
+     */
     public $sourcePath = '@bower/bootstrap-toggle';
 
+    /**
+     * @inheritdoc
+     */
     public $css = [
         'css/bootstrap-toggle.css',
     ];
 
+    /**
+     * @inheritdoc
+     */
     public $js = [
         'js/bootstrap-toggle.js',
     ];
 
+    /**
+     * @inheritdoc
+     */
     public $depends = [
-        'yii\web\JqueryAsset',
+        JqueryAsset::class,
     ];
 }

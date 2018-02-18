@@ -1,14 +1,11 @@
 yii2-bootstrap-toggle
 ===========
 
-[![Build Status](https://travis-ci.org/alexeevdv/yii2-bootstrap-toggle.svg?branch=master)](https://travis-ci.org/alexeevdv/yii2-bootstrap-toggle)
+[![Build Status](https://travis-ci.org/alexeevdv/yii2-bootstrap-toggle.svg?branch=master)](https://travis-ci.org/alexeevdv/yii2-bootstrap-toggle) ![PHP 5.6](https://img.shields.io/badge/PHP-5.6-green.svg) ![PHP 7.0](https://img.shields.io/badge/PHP-7.0-green.svg) ![PHP 7.1](https://img.shields.io/badge/PHP-7.1-green.svg) ![PHP 7.2](https://img.shields.io/badge/PHP-7.2-green.svg)
 
-Yii2 extension to render bootstrap toggle widget instead of checkbox.
+Yii2 extension to render [bootstrap toggle](http://www.bootstraptoggle.com/) widget instead of checkbox.
 
 ![Screenshot](screenshot.jpg)
-
-[http://www.bootstraptoggle.com/](http://www.bootstraptoggle.com/)
-
 
 ## Installation
 
@@ -17,13 +14,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```
-$ php composer.phar require alexeevdv/yii2-bootstrap-toggle ^1.0
+$ php composer.phar require alexeevdv/yii2-bootstrap-toggle "~1.0"
 ```
 
 or add
 
 ```
-"alexeevdv/yii2-bootstrap-toggle": "^1.0"
+"alexeevdv/yii2-bootstrap-toggle": "~1.0"
 ```
 
 to the ```require``` section of your `composer.json` file.
@@ -35,7 +32,7 @@ to the ```require``` section of your `composer.json` file.
 use alexeevdv\bootstrap\BootstrapToggleWidget;
 
 //...
-echo $form->field($model, 'attribute')->widget(BootstrapToggleWidget::className());
+echo $form->field($model, 'attribute')->widget(BootstrapToggleWidget::class);
 //...
 ```
 
