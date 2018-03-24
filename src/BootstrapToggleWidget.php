@@ -25,6 +25,16 @@ class BootstrapToggleWidget extends InputWidget
     public $labelDisabled;
 
     /**
+     * @var mixed
+     */
+    public $valueEnabled = '1';
+
+    /**
+     * @var mixed
+     */
+    public $valueDisabled = '0';
+
+    /**
      * @var string
      */
     public $container = 'div';
@@ -44,10 +54,10 @@ class BootstrapToggleWidget extends InputWidget
      */
     public function init()
     {
-        if (!$this->labelEnabled) {
+        if ($this->labelEnabled === null) {
             $this->labelEnabled = Yii::t('yii', 'Yes');
         }
-        if (!$this->labelDisabled) {
+        if ($this->labelDisabled === null) {
             $this->labelDisabled = Yii::t('yii', 'No');
         }
         parent::init();
@@ -82,9 +92,16 @@ class BootstrapToggleWidget extends InputWidget
      */
     protected function renderInput()
     {
+        $checkboxOptions = [
+            'label' => false,
+            'id' => $this->getId(),
+            'value' => $this->valueEnabled,
+            'uncheck' => $this->valueDisabled,
+        ];
+
         if ($this->model) {
-            return Html::activeCheckbox($this->model, $this->attribute, ['label' => false, 'id' => $this->getId()]);
+            return Html::activeCheckbox($this->model, $this->attribute, $checkboxOptions);
         }
-        return Html::checkbox($this->name, $this->value, ['label' => false, 'id' => $this->getId()]);
+        return Html::checkbox($this->name, $this->value, $checkboxOptions);
     }
 }
