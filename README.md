@@ -19,13 +19,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```
-$ php composer.phar require alexeevdv/yii2-bootstrap-toggle "~1.0"
+$ php composer.phar require alexeevdv/yii2-bootstrap-toggle "~1.0.0"
 ```
 
 or add
 
 ```
-"alexeevdv/yii2-bootstrap-toggle": "~1.0"
+"alexeevdv/yii2-bootstrap-toggle": "~1.0.0"
 ```
 
 to the ```require``` section of your `composer.json` file.
@@ -58,7 +58,6 @@ BootstrapToggleWidget::widget([
 
 ```php
 BootstrapToggleWidget::widget([
-
     /**
      * Wrapper tag name. If set to false no tag will be rendered
      */
@@ -77,11 +76,21 @@ BootstrapToggleWidget::widget([
     /**
      * Label when checkbox is not checked
      */
-     'labelDisabled' => 'No',
+    'labelDisabled' => 'No',
+     
+    /**
+     * Value when checkbox is checked
+     */
+    'valueEnabled' => '1',
+
+    /**
+     * Value when checkbox is not checked
+     */
+    'valueDisabled' => '0',     
      
      /**
       * Additional javascript options to Bootstrap Toggle plugin 
       */
-      'pluginOptions' => [],
+     'pluginOptions' => [],
 ]);
 ```
