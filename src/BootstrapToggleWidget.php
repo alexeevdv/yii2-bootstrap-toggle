@@ -1,6 +1,6 @@
 <?php
 
-namespace alexeevdv\bootstrap;
+namespace alexeevdv\yii;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -10,7 +10,7 @@ use yii\widgets\InputWidget;
 
 /**
  * Class BootstrapToggleWidget
- * @package alexeevdv\bootstrap
+ * @package alexeevdv\yii
  */
 class BootstrapToggleWidget extends InputWidget
 {
@@ -54,13 +54,13 @@ class BootstrapToggleWidget extends InputWidget
      */
     public function init()
     {
+        parent::init();
         if ($this->labelEnabled === null) {
             $this->labelEnabled = Yii::t('yii', 'Yes');
         }
         if ($this->labelDisabled === null) {
             $this->labelDisabled = Yii::t('yii', 'No');
         }
-        parent::init();
     }
 
     /**
@@ -68,18 +68,8 @@ class BootstrapToggleWidget extends InputWidget
      */
     public function run()
     {
-        BootstrapToggleAsset::register($this->getView());
-
-        $pluginOptions = ArrayHelper::merge([
-            'on' => $this->labelEnabled,
-            'off' => $this->labelDisabled,
-            'onstyle' => 'success',
-            'offstyle' => 'danger',
-        ], $this->pluginOptions);
-
-        $this->view->registerJs('
-            $("#' . $this->getId() . '").bootstrapToggle(' . Json::encode($pluginOptions) . ');
-        ');
+        $this->registerAssets();
+        $this->registerJs();
 
         if ($this->container) {
             return Html::tag($this->container, $this->renderInput(), $this->containerOptions);
@@ -103,5 +93,30 @@ class BootstrapToggleWidget extends InputWidget
             return Html::activeCheckbox($this->model, $this->attribute, $checkboxOptions);
         }
         return Html::checkbox($this->name, $this->value, $checkboxOptions);
+    }
+
+    /**
+     * Register assets
+     */
+    protected function registerAssets()
+    {
+        BootstrapToggleAsset::register($this->getView());
+    }
+
+    /**
+     * Register JS
+     */
+    protected function registerJs()
+    {
+        $pluginOptions = ArrayHelper::merge([
+            'on' => $this->labelEnabled,
+            'off' => $this->labelDisabled,
+            'onstyle' => 'success',
+            'offstyle' => 'danger',
+        ], $this->pluginOptions);
+
+        $this->view->registerJs('
+            $("#' . $this->getId() . '").bootstrapToggle(' . Json::encode($pluginOptions) . ');
+        ');
     }
 }

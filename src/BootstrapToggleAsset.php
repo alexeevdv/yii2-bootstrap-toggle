@@ -1,13 +1,13 @@
 <?php
 
-namespace alexeevdv\bootstrap;
+namespace alexeevdv\yii;
 
 use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
 
 /**
  * Class BootstrapToggleWidgetAsset
- * @package alexeevdv\bootstrap
+ * @package alexeevdv\yii
  */
 class BootstrapToggleAsset extends AssetBundle
 {

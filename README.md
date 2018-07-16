@@ -19,13 +19,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```
-$ php composer.phar require alexeevdv/yii2-bootstrap-toggle "~1.0.0"
+$ php composer.phar require alexeevdv/yii2-bootstrap-toggle "~2.0"
 ```
 
 or add
 
 ```
-"alexeevdv/yii2-bootstrap-toggle": "~1.0.0"
+"alexeevdv/yii2-bootstrap-toggle": "~2.0"
 ```
 
 to the ```require``` section of your `composer.json` file.
@@ -34,7 +34,7 @@ to the ```require``` section of your `composer.json` file.
 
 ### In active form
 ```php
-use alexeevdv\bootstrap\BootstrapToggleWidget;
+use alexeevdv\yii\BootstrapToggleWidget;
 
 //...
 echo $form->field($model, 'attribute')->widget(BootstrapToggleWidget::class);
@@ -44,7 +44,7 @@ echo $form->field($model, 'attribute')->widget(BootstrapToggleWidget::class);
 ### Standalone widget
 
 ```php
-use alexeevdv\bootstrap\BootstrapToggleWidget;
+use alexeevdv\yii\BootstrapToggleWidget;
 
 //...
 BootstrapToggleWidget::widget([

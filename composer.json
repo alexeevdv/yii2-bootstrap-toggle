@@ -9,12 +9,12 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "^2.0",
-        "bower-asset/bootstrap-toggle": "^2.2"
+        "yiisoft/yii2": "~2.0",
+        "bower-asset/bootstrap-toggle": "~2.2"
     },
     "require-dev": {
-        "yiisoft/yii2-coding-standards": "^2.0",
-        "codeception/codeception": "^2.3"
+        "yiisoft/yii2-coding-standards": "~2.0.0",
+        "codeception/codeception": "~2.4.0"
     },
     "repositories": [
         {
@@ -24,7 +24,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "alexeevdv\\bootstrap\\": "src"
+            "alexeevdv\\yii\\": "src"
         }
     }
 }
